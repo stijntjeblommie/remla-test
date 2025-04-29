@@ -4,6 +4,11 @@ from flasgger import Swagger
 app = Flask(__name__)
 swagger = Swagger(app)
 
+@app.route("/", methods=["GET"])
+def index():
+	return "some output"
+
+
 @app.route("/", methods=["POST"])
 def predict():
 	"""
